@@ -1,34 +1,32 @@
 #include <iostream>
-#include <ctime>
+#include <ctime>    //header include for time fn use din line 10
 
 int main(){
 
 int num;
 int guess;
-int tries=0;
+int c=0;
 
-srand(time(NULL));
+srand(time(NULL)); // provide changing in seeding i.e gives new initial no. at each run time or else at every run we have to guess same no.
 num = (rand() % 100) +1;
-std::cout << "******NUMBER GUESSISNG GAME*******\n";
+std::cout << "NUMBER GUESSISNG GAME\n";
 
 do{
 std::cout << "Enter the number (1-100): ";
 std::cin >> guess;
-tries++;
+c++;             // for counting no. of tries.
 
 if(guess < num){
-  std::cout << "Too low!\n";
+  std::cout << "Too low dear!\n";
 
 }
 else if(guess > num){
-  std::cout << "Too high!\n";
+  std::cout << "Too high dear!\n";
 }
 else{
-  std::cout << "CORRECT # no. of tries: "<< tries<< "\n";
+  std::cout << "CORRECT # : "<< guess << " in " << c << " no. of tries" <<'\n';
 }
 } while(guess != num);
-
-std::cout << "********************\n";
 
 return 0;
 
