@@ -25,7 +25,13 @@ else if(guess > num){
 }
 else{
   std::cout << "CORRECT # : "<< guess << " in " << c << " no. of tries" <<'\n';
-}
+  if(c<9){
+  std::cout << "Congratulations! you WON the game dear.\n";
+  }
+  else{
+    std::cout <<"Sorry dear! You lost, Better luck next time.\n";
+ }
+    }
 } while(guess != num);
 
 return 0;
