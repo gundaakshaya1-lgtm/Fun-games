@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip> // iomanip, header file included to set floating point precicion.(check line#40 )
 void showbalance(double balance);
 double deposit(double balance);
 double withdraw(double balance);
@@ -13,7 +14,9 @@ do{  std::cout <<"How can we help you ? Select from the following choices.\n";
   std::cout <<"3. Withdraw Amount\n";
   std::cout <<"4. Exit\n";
   std::cin >> choice;
-
+   
+ std::cin.clear();   //stops our program going in crazy like oo loop, when we enter someother character. 
+ fflush(stdin);    
    switch(choice)
    {
      case 1: show balance(balance);
@@ -34,7 +37,7 @@ do{  std::cout <<"How can we help you ? Select from the following choices.\n";
 
 void showbalance(double balance)
 {
-  std::cout <<"Your balance = $"<< balance<<'\n';
+  std::cout <<"Your balance = $"<<std::setprecision(2) <<std::fixed << balance<<'\n'; //iomanip application.
 }
 
 double deposit(double balance)
