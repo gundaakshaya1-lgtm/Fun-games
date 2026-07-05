@@ -16,7 +16,7 @@ do{  std::cout <<"How can we help you ? Select from the following choices.\n";
   std::cin >> choice;
    
  std::cin.clear();   //stops our program going in crazy like oo loop, when we enter someother character. 
- fflush(stdin);    
+ fflush(stdin);      // i.e clears input buffer.
    switch(choice)
    {
      case 1: show balance(balance);
