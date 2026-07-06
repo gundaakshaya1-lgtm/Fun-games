@@ -10,7 +10,6 @@ void winner(char uch, char cch);
 
 int main()
 { 
-    srand(time(0));
     char uch, cch;
     int con;
    do{
@@ -37,7 +36,7 @@ char userchoice()
     return uch;
 }
 char compchoice()
-{   
+{   srand(time(0)); // if we keep it here only, it provides seeding. when I placed in main(), the computer choice isn't changing.
     int n= (rand()%3)+1;
     switch(n)
     {
