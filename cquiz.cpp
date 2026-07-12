@@ -1,8 +1,8 @@
 #include <iostream>
 
-void quiz(std::string array[], std::string array1[][4]);
+void quiz(std::string array[], std::string array1[][4], char ans[]);
 int main()
-{
+{ int s;
     std::string questions[] = {"1. What is capital of telangana?", 
                             "2. What is the famous food in hyderabad?", 
                             "3. What is the national bird?", 
@@ -14,14 +14,15 @@ int main()
                                {"A. tiger", "B. lion", "C. elephant", "D. giraffee"},
                                };
 
-
+  char answer[] = {'A', 'C', 'B', 'A'};
     
     std::cout<< "**********QUIZ********************\n";
-    quiz( questions, options);
+   quiz( questions, options, answer);
 }
 
-void quiz(std::string array[],std::string array1[][4])
-{   std::string choice;
+void quiz(std::string array[],std::string array1[][4], char ans[])
+{   char choice;
+    int score=0;
     for(int i=0; i<4; i++)
     {
         std::cout << array[i]<<'\n';
@@ -32,36 +33,19 @@ void quiz(std::string array[],std::string array1[][4])
         
         std::cout << "Enter your answer(ABCD)\n";
         std::cin >> choice;
-        if(i==0)
+        if(choice = ans[i])
         {
-            if(choice == "A")
-            std::cout <<"Correct Answer:)\n";
-            else
-            std::cout << "Wrong answer\n";
-        }
-        else if(i==1)
-        {
-            if(choice == "C")
-            std::cout <<"Correct Answer\n";
-            else
-            std::cout << "Wrong answer\n";
-        }
-        else if(i==2)
-        {
-            if(choice == "B")
-            std::cout <<"Correct Answer\n";
-            else
-            std::cout << "Wrong answer\n";
+            std::cout << "Correct Answer\n";
+            score++;
         }
         else
         {
-            if(choice == "A")
-            std::cout <<"Correct Answer\n";
-            else
-            std::cout << "Wrong answer\n";
+            std::cout <<"Wrong\n" <<"Correct = "<< ans[i] <<'\n';
         }
+            
         std::cout <<'\n';
-        
+
     }
+ std::cout << "Your final score= "<< score << " out of 4\n";
  std::cout <<"****************************************\n";
 }
