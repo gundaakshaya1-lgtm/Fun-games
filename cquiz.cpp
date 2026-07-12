@@ -33,7 +33,7 @@ void quiz(std::string array[],std::string array1[][4], char ans[])
         
         std::cout << "Enter your answer(ABCD)\n";
         std::cin >> choice;
-        if(choice = ans[i])
+        if(choice == ans[i])
         {
             std::cout << "Correct Answer\n";
             score++;
